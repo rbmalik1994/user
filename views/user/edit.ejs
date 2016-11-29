@@ -1,0 +1,9 @@
+<form action="/user/update/<%= user.id %>" method="post">
+  <h2>Edit User <%= user.id %></h2>
+
+  <input value="<%= user.name %>" type="text"  name="name"><br/>
+  <input  value="<%= user.email %>" type="text"  name="email"><br/>
+  <input value="<%= user.password %>" type="text"  name="password"><br/>
+  <input type="submit" value="Edit User"><br/>
+
+</form>
