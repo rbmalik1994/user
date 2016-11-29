@@ -26,6 +26,16 @@ module.exports = {
 				user: user
 			});
 		});
+	},
+
+	index: function (req, res, next){
+		User.find(function foundUsers(err, users){
+			if (err) return next(err);
+
+			res.view({
+				users: users
+			});
+		});
 	}
 
 
