@@ -1,7 +1,21 @@
-<h1> Dashboard!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1> Dashboard!</h1>
 
-<h3> Users </h3>
+      <a href="/user/login">login</a> &nbsp;| &nbsp;
+      <a href="/user/new"> Signup</a>
+    </div>
+    <div class="col-sm-8">
+      loged in user
+      <h3> <%= user.name %> </h3>
+      <h3> Email: <%= user.email %></h3>
       <a href="/user/logout/"> logout</a>
+    </div>
+
+      <hr>
+  </div>
+<h3> Users </h3>
 <table>
   <tr>
     <th>ID</th>
@@ -25,3 +39,4 @@
     </tr>
     <% }) %>
   </table>
+</div>

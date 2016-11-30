@@ -37,6 +37,16 @@ module.exports = {
 			});
 		});
 	},
+	dashboard: function (req, res, next){
+
+		User.find(function foundUsers(err, users){
+			if (err) return next(err);
+
+			res.view({
+				users: users
+			});
+		});
+	},
 	edit: function (req, res, next){
 		User.findOne(req.param('id'), function foundUser(err, user){
 			if (err) return next(err);
@@ -60,7 +70,7 @@ module.exports = {
 
 	destroy: function(req, res, next){
 		User.destroy(req.param('id')).exec( function(){
-    	res.redirect('/user/');
+    	res.redirect('/user/dashboard');
 		});
 	}
 
